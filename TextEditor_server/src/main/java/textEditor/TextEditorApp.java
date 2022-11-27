@@ -1,0 +1,14 @@
+package textEditor;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+;
+
+@SpringBootApplication
+public class TextEditorApp {
+
+    public static void main(String[] args) {
+        SpringApplication.run(TextEditorApp.class, args);
+    }
+
+}
