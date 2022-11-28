@@ -10,8 +10,7 @@ import {JsonDemo} from "./models/JsonDemo";
 })
 export class AppComponent implements OnInit {
   title = 'demoFront';
-  testOnClick: JsonDemo | undefined;
-  stringdemo: string = "Ceva";
+  testOnClick: JsonDemo[];
   private httpCancelSubject: Subject<any> = new Subject<any>();
 
   constructor(private demoService: DemoService) {
@@ -26,7 +25,6 @@ export class AppComponent implements OnInit {
       .pipe(takeUntil(this.httpCancelSubject))
       .subscribe(resp => {
           this.testOnClick = resp;
-          this.stringdemo = this.testOnClick.field;
         }
       )
   }

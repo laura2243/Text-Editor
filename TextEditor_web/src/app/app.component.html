@@ -1,4 +1,7 @@
 <button type="button" class="btn btn-primary" (click)="onClick()">Primary
 </button>
-<h3>{{this.stringdemo}}</h3>
-
+<ul>
+  <li *ngFor="let item of testOnClick">
+    {{ item.id }} {{ item.field}}
+  </li>
+</ul>

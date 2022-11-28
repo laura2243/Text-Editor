@@ -14,8 +14,8 @@ export class DemoService {
   }
 
 
-  public getTest(): Observable<JsonDemo> {
-    return this.httpClient.get<JsonDemo>(`${this.basePath}/test`);
+  public getTest(): Observable<Array<JsonDemo>> {
+    return this.httpClient.get<Array<JsonDemo>>(`${this.basePath}/test`);
 
   }
 }

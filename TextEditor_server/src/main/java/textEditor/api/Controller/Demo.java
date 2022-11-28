@@ -1,9 +1,13 @@
 package textEditor.api.Controller;
 
-import textEditor.api.Model.ObiectDemo;
+import org.springframework.beans.factory.annotation.Autowired;
+import textEditor.api.Entity.DemoEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import textEditor.api.Repositories.RepoDemo;
+
+import java.util.List;
 
 
 @RestController
@@ -11,8 +15,12 @@ import org.springframework.web.bind.annotation.RestController;
 public class Demo {
 
 
+    @Autowired
+    private RepoDemo repoDemo;
+
     @GetMapping("/test")
-    public ObiectDemo test() {
-        return new ObiectDemo("Pressed");
+    public List<DemoEntity> test() {
+        System.out.println(repoDemo.findAll());
+        return repoDemo.findAll();
     }
 }

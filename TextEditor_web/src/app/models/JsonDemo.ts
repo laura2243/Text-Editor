@@ -2,5 +2,6 @@ export interface JsonDemo {
   /**
    *
    */
-  field: string;
+  id?: number
+  field?: string;
 }
