@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {DemoService} from "./services/demo.service";
+import {DemoService} from "./shared/services/demo.service";
 import {ObservableInput, Subject, takeUntil} from "rxjs";
-import {JsonDemo} from "./models/JsonDemo";
+import {JsonDemo} from "./shared/models/JsonDemo";
 
 @Component({
   selector: 'app-root',
