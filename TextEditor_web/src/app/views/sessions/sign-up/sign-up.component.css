@@ -1,17 +1,20 @@
 .sign-up-page-container {
+  position: absolute;
   width: 100%;
+  height: 100%;
   display: flex;
-  overflow: auto;
-  box-shadow: 5px 5px 90px 0px #d4d4d4;
-  min-height: 720;
+  padding: var(--dl-space-space-oneandhalfunits--);
+  overflow: hidden;
+  box-shadow: 50px 50px 90px 100px #f9f9f9;
   align-items: center;
-  border-color: var(--dl-color-gray-black);
+  /*!*border-color: var(--dl-color-gray-black);*!*/
   border-width: 1px;
   flex-direction: row;
-  background-size: cover;
+  /*background-size: contain;*/
   justify-content: center;
-  background-image: url("~src/assets/images/session.jpg");
-  background-position: top;
+  background: url("~src/assets/images/session.jpg") no-repeat;
+  background-size: cover;
+  /*background-color: aqua;*/
 }
 .sign-up-page-container1 {
   width: 595px;
@@ -40,6 +43,7 @@
   object-fit: cover;
 }
 .sign-up-page-sign-up-button {
+  padding-top: 10px;
   top: 437px;
   left: 0px;
   color: #ffffff;
@@ -65,7 +69,7 @@
   font-family: Courier New;
 }
 .sign-up-page-text1 {
-  top: 165px;
+  top: 135px;
   left: 0px;
   right: 0px;
   width: 282px;
