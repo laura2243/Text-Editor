@@ -7,13 +7,13 @@
         src="assets/images/logo.png"
         class="sign-up-page-image"
       />
-      <a
-        routerLink="/thank-you-page"
+      <button
         id="buttonSignUp"
         class="sign-up-page-sign-up-button button"
+        (click)="onClick()"
       >
-        <span class="sign-up-page-text">Sign up</span>
-      </a>
+        <span class="sign-up-page-text" >Sign up</span>
+      </button>
       <h1 id="createAccountText" class="sign-up-page-text1">
         <span>Create Account</span>
         <br />

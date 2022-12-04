@@ -8,7 +8,9 @@ import {SignUpComponent} from './views/sessions/sign-up/sign-up.component';
 import {ThankYouPageComponent} from './views/sessions/thank-you-page/thank-you-page.component';
 import {ResetPasswordComponent} from './views/sessions/reset-password/reset-password.component';
 import {RouterModule, Routes} from '@angular/router';
-
+// import {CKEditorModule} from "ng2-ckeditor";
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+import { HomeComponent } from './views/home/home.component';
 
 const routes: Routes = [
   {path: '', component: LogInComponent},
@@ -16,6 +18,7 @@ const routes: Routes = [
   {path: 'sign-up', component: SignUpComponent},
   {path: 'reset-password', component: ResetPasswordComponent},
   {path: 'thank-you-page', component: ThankYouPageComponent},
+  {path: 'home', component: HomeComponent},
 ]
 
 @NgModule({
@@ -24,13 +27,15 @@ const routes: Routes = [
     LogInComponent,
     SignUpComponent,
     ThankYouPageComponent,
-    ResetPasswordComponent
+    ResetPasswordComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     FormsModule,
     RouterModule.forRoot(routes),
+    CKEditorModule
   ],
   providers: [],
   bootstrap: [AppComponent]
