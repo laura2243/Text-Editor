@@ -2,7 +2,7 @@ import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {AppComponent} from './app.component';
 import {HttpClientModule} from '@angular/common/http';
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {LogInComponent} from './views/sessions/log-in/log-in.component';
 import {SignUpComponent} from './views/sessions/sign-up/sign-up.component';
 import {ThankYouPageComponent} from './views/sessions/thank-you-page/thank-you-page.component';
@@ -30,13 +30,14 @@ const routes: Routes = [
     ResetPasswordComponent,
     HomeComponent
   ],
-  imports: [
-    BrowserModule,
-    HttpClientModule,
-    FormsModule,
-    RouterModule.forRoot(routes),
-    CKEditorModule
-  ],
+    imports: [
+        BrowserModule,
+        HttpClientModule,
+        FormsModule,
+        RouterModule.forRoot(routes),
+        CKEditorModule,
+        ReactiveFormsModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
