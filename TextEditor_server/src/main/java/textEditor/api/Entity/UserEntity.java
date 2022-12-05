@@ -11,14 +11,10 @@ import javax.persistence.*;
 @NoArgsConstructor
 @ToString
 @Entity
-@Table(name = "User")
+@Table(name = "users")
 public class UserEntity {
 
-    public UserEntity(UserModel userModel){
-        this.username = userModel.getUsername();
-        this.email = userModel.getEmail();
-        this.password = userModel.getPassword();
-    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)

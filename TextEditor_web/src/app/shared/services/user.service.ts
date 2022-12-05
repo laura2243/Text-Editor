@@ -15,7 +15,7 @@ export class UserService {
 
 
   public signUp(newUser: User): Observable<any> {
-    return this.httpClient.post<User>(`${this.basePath}/signUp`,{ title: 'Sign up' });
+    return this.httpClient.post<User>(`${this.basePath}/signUp`,newUser);
 
   }
 }

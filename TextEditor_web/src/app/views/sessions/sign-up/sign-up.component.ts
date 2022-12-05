@@ -15,13 +15,16 @@ export class SignUpComponent {
     user: User = {
       username: (document.getElementById("inputUsername") as HTMLInputElement)?.value,
       email: (document.getElementById("inputEmail") as HTMLInputElement)?.value,
-      password: (document.getElementById("inputPassword") as HTMLInputElement)?.value,
+      password: (document.getElementById("inputPassword") as HTMLInputElement)?.value
+
   }
 
 
   onClick() {
+    console.log(this.user);
+    console.log((document.getElementsByClassName("input")[0].children[0] )as HTMLElement);
     this.userService.signUp(this.user).pipe().subscribe(response=>{
-      this.router.navigate(['/thank-you-page']);
+       this.router.navigate(['/thank-you-page']);
     })
   }
 }

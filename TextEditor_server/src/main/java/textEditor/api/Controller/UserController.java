@@ -7,6 +7,9 @@ import textEditor.api.Model.UserModel;
 import textEditor.api.Repositories.UserRepo;
 import textEditor.api.Services.UserService;
 
+import javax.ws.rs.Consumes;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
 import java.util.List;
 
 
@@ -18,8 +21,9 @@ public class UserController {
     private UserService userService;
 
     @PostMapping("/signUp")
-    public UserModel signUp(UserModel userModel){
-       return userService.signUp(userModel);
+    public UserModel signUp(@RequestBody UserModel userModel){
+       System.out.println("aaaaaaaaa" + userModel);
+        return userService.signUp(userModel);
     }
 
     @GetMapping("/logIn")

@@ -4,6 +4,8 @@ import textEditor.api.Entity.UserEntity;
 
 @Getter
 @Setter
+@NoArgsConstructor
+@ToString
 public class UserModel {
 
     private String username;
