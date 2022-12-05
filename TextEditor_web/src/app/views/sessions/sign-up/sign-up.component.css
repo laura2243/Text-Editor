@@ -44,7 +44,7 @@
 }
 .sign-up-page-sign-up-button {
   padding-top: 10px;
-  top: 437px;
+  top: 420px;
   left: 0px;
   color: #ffffff;
   right: 0px;
@@ -63,6 +63,10 @@
   text-decoration: none;
   background-color: #171919;
 }
+.sign-up-page-sign-up-button.disabled{
+  background-color: gray;
+}
+
 .sign-up-page-text {
   background-color: #171919;
   color: white;
@@ -74,7 +78,7 @@
   top: 135px;
   left: 0px;
   right: 0px;
-  width: 282px;
+  /*width: 282px;*/
   height: 32px;
   margin: auto;
   position: absolute;
@@ -85,7 +89,7 @@
   border-radius: var(--dl-radius-radius-radius4);
 }
 .sign-up-page-username-input {
-  top: 231px;
+  top: 211px;
   left: 0px;
   right: 0px;
   width: 271px;
@@ -101,7 +105,7 @@
   border-bottom-width: 3px;
 }
 .sign-up-page-password-input {
-  top: 286px;
+  top: 262px;
   left: 0px;
   right: 0px;
   width: 270px;
@@ -115,7 +119,7 @@
   border-bottom-width: 3px;
 }
 .sign-up-page-password-input1 {
-  top: 342px;
+  top: 318px;
   left: 0px;
   right: 0px;
   width: 270px;
@@ -127,4 +131,24 @@
   border-width: 0px;
   background-color: rgba(241, 238, 236, 0.05);
   border-bottom-width: 3px;
+}
+
+.sign-up-page-password-input2 {
+  top: 373px;
+  left: 0px;
+  right: 0px;
+  width: 270px;
+  margin: auto;
+  position: absolute;
+  text-align: center;
+  font-family: Courier New;
+  border-style: outset;
+  border-width: 0px;
+  background-color: rgba(241, 238, 236, 0.05);
+  border-bottom-width: 3px;
+}
+.form-error-msg {
+  color: #f44336;
+  display: block;
+  padding: 5px 0;
 }
