@@ -13,8 +13,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // import {CKEditorModule} from "ng2-ckeditor";
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { HomeComponent } from './views/home/home.component';
-import {NotificationService} from "./shared/services/notification.service";
 import {MatSnackBarModule} from "@angular/material/snack-bar";
+import { NotificationService} from "./shared/services/notification.service";
 
 const routes: Routes = [
   {path: '', component: LogInComponent},

@@ -21,6 +21,9 @@ export class UserService {
 
   public logIn(newUser: User): Observable<any> {
     return this.httpClient.post<User>(`${this.basePath}/logIn`,newUser);
+  }
 
+  public forgotPassword(newUser: User): Observable<any> {
+    return this.httpClient.post<User>(`${this.basePath}/forgotPassword`,newUser);
   }
 }

@@ -16,7 +16,7 @@ export class LogInComponent implements OnInit {
 
   logInForm: FormGroup;
 
-  constructor(private userService: UserService, private router: Router, private notificationService: NotificationService) {
+  constructor(private userService: UserService, private router: Router, private notification: NotificationService) {
   }
 
   ngOnInit() {
@@ -39,9 +39,8 @@ export class LogInComponent implements OnInit {
 
     this.userService.logIn(user).pipe().subscribe(response => {
       this.router.navigate(['/home']);
-    }, error => {
-      // this.notificationService.showPopupMessage("eroareee","OK")
-      alert("eroare")
+    },error=>{
+        this.notification.showPopupMessage("ddd","OK")
     })
   }
 }

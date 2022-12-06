@@ -22,14 +22,17 @@ public class UserController {
 
     @PostMapping("/signUp")
     public UserModel signUp(@RequestBody UserModel userModel){
-
         return userService.signUp(userModel);
     }
 
     @PostMapping("/logIn")
     public UserModel logIn(@RequestBody UserModel userModel) throws Exception {
-        System.out.println("AAAAAAAAAAAAaaaaaaaaa" + userModel);
            return userService.logIn(userModel);
+    }
+
+    @PostMapping("/forgotPassword")
+    public UserModel forgotPassword(@RequestBody UserModel userModel)  throws Exception {
+        return userService.forgotPassword(userModel);
     }
 
 }
