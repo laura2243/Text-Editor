@@ -22,12 +22,13 @@ public class UserController {
 
     @PostMapping("/signUp")
     public UserModel signUp(@RequestBody UserModel userModel){
-       System.out.println("aaaaaaaaa" + userModel);
+
         return userService.signUp(userModel);
     }
 
-    @GetMapping("/logIn")
-    public UserModel logIn(UserModel userModel){
+    @PostMapping("/logIn")
+    public UserModel logIn(@RequestBody UserModel userModel) throws Exception {
+        System.out.println("AAAAAAAAAAAAaaaaaaaaa" + userModel);
            return userService.logIn(userModel);
     }
 

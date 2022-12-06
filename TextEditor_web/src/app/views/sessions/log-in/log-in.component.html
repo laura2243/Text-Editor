@@ -7,41 +7,51 @@
         id="logoJpg"
         class="home-image"
       />
-      <a
-        routerLink="/sign-up"
-        id="buttonSignUp"
-        class="home-sign-up-button button"
-      >
-        <span class="home-text">Sign up</span>
-      </a>
       <h1 id="textboxWelcome" class="home-text1">
         Welcome to Writer Workspace
       </h1>
-      <input
-        type="text"
-        placeholder="username"
-        required
-        id="inputUsername"
-        class="home-username-input input"
-      />
-      <input
-        type="text"
-        placeholder="password"
-        required
-        id="inputPassword"
-        class="home-password-input input"
-      />
-      <a
-        routerLink="/home"
-        id="buttonLogIn"
-        class="home-login-button button"
-      >
-        <span class="home-text2">
-          <span>Login</span>
-          <br/>
-          <br/>
-        </span>
-      </a>
+      <form [formGroup]="logInForm" (ngSubmit)="onClick()">
+        <div class="">
+          <input
+            matInput
+            name="username"
+            [formControlName]="'username'"
+            placeholder="username"
+            value=""
+            class="home-username-input input">
+          <small
+            *ngIf="logInForm.controls['username'].hasError('required') && logInForm.controls['username'].touched"
+            class="form-error-msg"> *Username is required </small>
+        </div>
+
+        <div>
+          <input
+            matInput
+            name="password"
+            type="password"
+            [formControlName]="'password'"
+            placeholder="password"
+            value=""
+            class="home-password-input input">
+          <small
+            *ngIf="logInForm.controls['password'].hasError('required') && logInForm.controls['password'].touched"
+            class="form-error-msg"> *Password is required </small>
+        </div>
+        <button
+          class="home-login-button button"
+          [disabled]="logInForm.invalid"
+          [class.disabled]="logInForm.invalid"
+        >Log in
+        </button>
+      </form>
+
+      <button
+        class="home-sign-up-button button"
+        routerLink="/sign-up"
+      >Sign Up
+      </button>
+
+
       <span id="textOr" class="home-text6">
         ────────────── or ──────────────
       </span>

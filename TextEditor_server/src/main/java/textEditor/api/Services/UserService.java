@@ -14,23 +14,25 @@ public class UserService {
     @Transactional
     public UserModel signUp(UserModel userModel){
 
-
-//        if(userRepo.findByUsername(userModel.getUsername())==null){
             UserEntity userEntity = new UserEntity();
             userEntity.setEmail(userModel.getEmail());
             userEntity.setUsername(userModel.getUsername());
             userEntity.setPassword(userModel.getPassword());
            userRepo.saveAndFlush(userEntity);
-//        }
        return userModel;
     }
-    public UserModel logIn(UserModel userModel){
+    public UserModel logIn (UserModel userModel) throws Exception {
 
-        if(userRepo.findByUsername(userModel.getUsername())!=null){
-
+        try {
+        if(userRepo.findByUsernameAndPassword(userModel.getUsername(), userModel.getPassword())!=null){
+            return userModel;
 
         }
-        return null;
+        } catch (Exception e){
+            throw  new Exception("Username or password incorrect");
+        }
+
+    return null;
     }
 
 

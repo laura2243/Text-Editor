@@ -18,4 +18,9 @@ export class UserService {
     return this.httpClient.post<User>(`${this.basePath}/signUp`,newUser);
 
   }
+
+  public logIn(newUser: User): Observable<any> {
+    return this.httpClient.post<User>(`${this.basePath}/logIn`,newUser);
+
+  }
 }

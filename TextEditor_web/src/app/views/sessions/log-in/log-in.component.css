@@ -121,6 +121,10 @@
   justify-content: center;
   text-decoration: none;
   background-color: #171919;
+
+}
+.home-login-button.disabled{
+  background-color: gray;
 }
 .home-text2 {
   font-size: 19px;
