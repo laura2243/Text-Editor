@@ -33,6 +33,7 @@ export class ResetPasswordComponent implements OnInit {
     }
 
     this.userService.forgotPassword(user).pipe().subscribe(response => {
+      this.notification.showPopupMessage("Check your mail!", "OK")
       this.router.navigate(['/log-in']);
     }, error => {
       this.notification.showPopupMessage("Invalid username/password", "OK")
