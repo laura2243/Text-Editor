@@ -40,7 +40,7 @@ export class LogInComponent implements OnInit {
     this.userService.logIn(user).pipe().subscribe(response => {
       this.router.navigate(['/home']);
     },error=>{
-        this.notification.showPopupMessage("ddd","OK")
+        this.notification.showPopupMessage("Username or password incorrect","OK")
     })
   }
 }
