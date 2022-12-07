@@ -12,3 +12,14 @@ body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.mat-mdc-snack-bar-container{
+
+  --mat-mdc-snack-bar-button-color: black;
+  --mdc-snackbar-container-color: rgba(241, 238,236,0.9);
+  --mdc-snackbar-supporting-text-color: black;
+
+}
