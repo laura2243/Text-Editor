@@ -17,13 +17,26 @@ export class SignUpComponent implements OnInit {
   constructor(private userService: UserService, private router: Router) {
   }
 
+  validatePassword() {
+    var password = document.getElementById("password") as HTMLInputElement;
+    var confirm_password = document.getElementById(
+      "repeatPassword"
+    ) as HTMLInputElement;
+
+    if (password.value !== confirm_password.value) {
+      confirm_password.setCustomValidity("Passwords Don't Match");
+    } else {
+      confirm_password.setCustomValidity("");
+    }
+    console.log(password.value);
+  }
   ngOnInit() {
 
     this.signUpForm = new FormGroup({
-      username: new FormControl('', Validators.required),
-      email: new FormControl('', Validators.required),
-      password: new FormControl('', Validators.required),
-      repeatPassword: new FormControl('', [Validators.required])
+      username: new FormControl(''),
+      email: new FormControl(''),
+      password: new FormControl(''),
+      repeatPassword: new FormControl('')
     }, {validators: passwordValidator});
   }
 

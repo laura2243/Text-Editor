@@ -36,6 +36,7 @@ export class LogInComponent implements OnInit {
       password: logInDate.password
     }
 
+    console.log(user)
 
     this.userService.logIn(user).pipe().subscribe(response => {
       this.router.navigate(['/home']);

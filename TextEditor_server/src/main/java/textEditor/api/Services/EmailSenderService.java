@@ -14,6 +14,7 @@ public class EmailSenderService {
                                 String subject,
                                 String body
     ) {
+
         SimpleMailMessage message = new SimpleMailMessage();
         message.setFrom("writersworkspace430@gmail.com");
         message.setTo(toEmail);

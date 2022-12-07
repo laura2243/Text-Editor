@@ -11,71 +11,79 @@
         Create Account
       </h1>
 
-      <form [formGroup]="signUpForm" (ngSubmit)="onClick()">
+      <form [formGroup]="signUpForm" (ngSubmit)="onClick()" ngNativeValidate>
         <div class="">
           <input
             matInput
+            required
             name="username"
             [formControlName]="'username'"
             placeholder="username"
             value=""
             class="sign-up-page-username-input input">
-          <small
-            *ngIf="signUpForm.controls['username'].hasError('required') && signUpForm.controls['username'].touched"
-            class="form-error-msg"> *Username is required </small>
+<!--          <small-->
+<!--            *ngIf="signUpForm.controls['username'].hasError('required') && signUpForm.controls['username'].touched"-->
+<!--            class="form-error-msg"> *Username is required </small>-->
         </div>
 
 
         <div>
           <input
             matInput
+            required
             name="email"
             [formControlName]="'email'"
             placeholder="email"
             value=""
             class="sign-up-page-password-input input">
-          <small
-            *ngIf="signUpForm.controls['email'].hasError('required') && signUpForm.controls['email'].touched"
-            class="form-error-msg"> *Email is required </small>
+<!--          <small-->
+<!--            *ngIf="signUpForm.controls['email'].hasError('required') && signUpForm.controls['email'].touched"-->
+<!--            class="form-error-msg"> *Email is required </small>-->
         </div>
 
 
         <div>
           <input
             matInput
+            (change)="validatePassword()"
+            id="password"
+            required
+            [formControlName]="'password'"
             name="password"
             type="password"
-            [formControlName]="'password'"
             placeholder="password"
             value=""
             class="sign-up-page-password-input1 input">
-          <small
-            *ngIf="signUpForm.controls['password'].hasError('required') && signUpForm.controls['password'].touched"
-            class="form-error-msg"> *Password is required </small>
+<!--          <small-->
+<!--            *ngIf="signUpForm.controls['password'].hasError('required') && signUpForm.controls['password'].touched"-->
+<!--            class="form-error-msg"> *Password is required </small>-->
         </div>
 
         <div>
           <input
             matInput
+            (change)="validatePassword()"
+            id = "repeatPassword"
+            required
+            [formControlName]="'repeatPassword'"
             name="repeatPassword"
             type="password"
-            [formControlName]="'repeatPassword'"
             placeholder="repeat password"
             value=""
             class="sign-up-page-password-input2 input">
-          <small
-            *ngIf="signUpForm.controls['repeatPassword'].hasError('required') && signUpForm.controls['repeatPassword'].touched"
-            class="form-error-msg"> *Repeat password is required </small>
-          <small *ngIf="signUpForm.hasError('nomatch') && signUpForm.controls['repeatPassword'].touched"
-                 class="form-error-msg"> *Passwords do not match </small>
+<!--          <small-->
+<!--            *ngIf="signUpForm.controls['repeatPassword'].hasError('required') && signUpForm.controls['repeatPassword'].touched"-->
+<!--            class="form-error-msg"> *Repeat password is required </small>-->
+<!--          <small *ngIf="signUpForm.hasError('nomatch') && signUpForm.controls['repeatPassword'].touched"-->
+<!--                 class="form-error-msg"> *Passwords do not match </small>-->
         </div>
 
 
         <button
-          class="sign-up-page-sign-up-button button"
-          [disabled]="signUpForm.invalid"
-          [class.disabled]="signUpForm.invalid"
-        >Sign up
+          class="sign-up-page-sign-up-button button">
+<!--          [disabled]="signUpForm.invalid"-->
+<!--          [class.disabled]="signUpForm.invalid"-->
+        Sign up
         </button>
       </form>
 

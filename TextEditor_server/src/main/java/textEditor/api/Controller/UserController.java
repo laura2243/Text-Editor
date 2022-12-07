@@ -27,7 +27,7 @@ public class UserController {
 
     @PostMapping("/logIn")
     public UserModel logIn(@RequestBody UserModel userModel) throws Exception {
-           return userService.logIn(userModel);
+        return userService.logIn(userModel);
     }
 
     @PostMapping("/forgotPassword")

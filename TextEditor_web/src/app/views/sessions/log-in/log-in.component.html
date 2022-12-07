@@ -10,38 +10,40 @@
       <h1 id="textboxWelcome" class="home-text1">
         Welcome to Writer Workspace
       </h1>
-      <form [formGroup]="logInForm" (ngSubmit)="onClick()">
+      <form [formGroup]="logInForm" (ngSubmit)="onClick()" ngNativeValidate>
         <div class="">
           <input
             matInput
+            required
             name="username"
             [formControlName]="'username'"
             placeholder="username"
             value=""
             class="home-username-input input">
-          <small
-            *ngIf="logInForm.controls['username'].hasError('required') && logInForm.controls['username'].touched"
-            class="form-error-msg"> *Username is required </small>
+<!--          <small-->
+<!--            *ngIf="logInForm.controls['username'].hasError('required') && logInForm.controls['username'].touched"-->
+<!--            class="form-error-msg"> *Username is required </small>-->
         </div>
 
         <div>
           <input
             matInput
+            required
             name="password"
             type="password"
             [formControlName]="'password'"
             placeholder="password"
             value=""
             class="home-password-input input">
-          <small
-            *ngIf="logInForm.controls['password'].hasError('required') && logInForm.controls['password'].touched"
-            class="form-error-msg"> *Password is required </small>
+<!--          <small-->
+<!--            *ngIf="logInForm.controls['password'].hasError('required') && logInForm.controls['password'].touched"-->
+<!--            class="form-error-msg"> *Password is required </small>-->
         </div>
         <button
-          class="home-login-button button"
-          [disabled]="logInForm.invalid"
-          [class.disabled]="logInForm.invalid"
-        >Log in
+          class="home-login-button button">
+<!--          [disabled]="logInForm.invalid"-->
+<!--          [class.disabled]="logInForm.invalid"-->
+        Log in
         </button>
       </form>
 

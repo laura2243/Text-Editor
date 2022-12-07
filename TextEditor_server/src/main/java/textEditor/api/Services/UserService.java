@@ -1,10 +1,12 @@
 package textEditor.api.Services;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.servlet.function.EntityResponse;
 import textEditor.api.Entity.UserEntity;
+import textEditor.api.Model.EmailEvent;
 import textEditor.api.Model.UserModel;
 import textEditor.api.Repositories.UserRepo;
 
@@ -42,14 +44,17 @@ public class UserService {
         }
 
     }
+    @Autowired
 
-    @Transactional
+    private ApplicationEventPublisher applicationEventPublisher;
+
     public UserModel forgotPassword(UserModel userModel) throws Exception {
 
         UserEntity userEntity = userRepo.findByUsernameOrEmail(userModel.getUsername(), userModel.getEmail());
 
         if (userEntity != null) {
-            emailSenderService.sendSimpleEmail(userEntity.getEmail(), "Forgot Password", userEntity.getPassword());
+            EmailEvent emailEvent = new EmailEvent(this,userEntity.getEmail(),"Forgot Password",userEntity.getPassword());
+            applicationEventPublisher.publishEvent(emailEvent);
         } else {
             throw new Exception("Invalid username/email");
         }

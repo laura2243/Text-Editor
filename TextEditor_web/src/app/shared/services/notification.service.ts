@@ -12,7 +12,7 @@ export class NotificationService {
 
   public showPopupMessage(message: string, confirmText: string | undefined) {
     this.snackBar.open(message, confirmText, {
-      panelClass:['custom-snackbar']
+
     });
   }
 }
