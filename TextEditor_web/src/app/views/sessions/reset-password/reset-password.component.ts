@@ -36,7 +36,7 @@ export class ResetPasswordComponent implements OnInit {
       this.notification.showPopupMessage("Check your mail!", "OK")
       this.router.navigate(['/log-in']);
     }, error => {
-      this.notification.showPopupMessage("Invalid username/password", "OK")
+      this.notification.showPopupMessage("Invalid username/email", "OK")
     })
   }
 
