@@ -17,7 +17,9 @@
             matInput
             required
             name="username"
+            id="username"
             [formControlName]="'username'"
+            (change)="validateUsername()"
             placeholder="username"
             value=""
             class="sign-up-page-username-input input">
@@ -32,7 +34,9 @@
             matInput
             required
             name="email"
+            id="email"
             [formControlName]="'email'"
+            (change)="validateMail()"
             placeholder="email"
             value=""
             class="sign-up-page-password-input input">

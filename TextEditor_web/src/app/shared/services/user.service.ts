@@ -26,4 +26,12 @@ export class UserService {
   public forgotPassword(newUser: User): Observable<any> {
     return this.httpClient.post<User>(`${this.basePath}/forgotPassword`,newUser);
   }
+
+  public getAllMails(): Observable<any> {
+    return this.httpClient.get<Array<string>>(`${this.basePath}/allMails`);
+  }
+
+  public getAllUsername(): Observable<any> {
+    return this.httpClient.get<Array<string>>(`${this.basePath}/allUsernames`);
+  }
 }

@@ -35,4 +35,14 @@ public class UserController {
         return userService.forgotPassword(userModel);
     }
 
+    @GetMapping("/allMails")
+    public List<String> getAllMails() {
+        return userService.getAllMails();
+    }
+
+    @GetMapping("/allUsernames")
+    public List<String> getAllUsername() {
+        return userService.getAllUsernames();
+    }
+
 }
