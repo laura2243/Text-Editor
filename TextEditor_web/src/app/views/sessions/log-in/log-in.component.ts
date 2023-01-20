@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output, ViewChild} from '@angular/core';
 import {User} from "../../../shared/models/User";
 import {UserService} from "../../../shared/services/user.service";
 import {Router} from "@angular/router";
@@ -6,6 +6,9 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {passwordValidator} from "../../../shared/helpers/password-validator";
 
 import {NotificationService} from "../../../shared/services/notification.service";
+import {RecentFilesComponent} from "../../recent-files/recent-files.component";
+import {DataService} from "../../../shared/services/data.service";
+import {Subscription} from "rxjs";
 
 @Component({
   selector: 'app-log-in',
@@ -15,8 +18,8 @@ import {NotificationService} from "../../../shared/services/notification.service
 export class LogInComponent implements OnInit {
 
   logInForm: FormGroup;
-
-  constructor(private userService: UserService, private router: Router, private notification: NotificationService) {
+  constructor(private userService: UserService, private router: Router, private notification: NotificationService,
+              private data: DataService) {
   }
 
   ngOnInit() {
@@ -35,13 +38,13 @@ export class LogInComponent implements OnInit {
       email: logInDate.username,
       password: logInDate.password
     }
-
+    this.data.changeMessage(user.email);
     console.log(user)
 
     this.userService.logIn(user).pipe().subscribe(response => {
-      this.router.navigate(['/home']);
-    },error=>{
-        this.notification.showPopupMessage("Username or password incorrect","OK")
+      this.router.navigate(['/recent-files']);
+    }, error => {
+      this.notification.showPopupMessage("Username or password incorrect", "OK")
     })
   }
 }

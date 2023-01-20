@@ -1,0 +1,31 @@
+<div>
+  <div id="textboxThankYou" class="thank-you-page-container">
+    <div id="containerButtons" class="thank-you-page-container1">
+      <img
+        id="logoImg"
+        alt="image"
+        src="assets/images/logo.png"
+        class="thank-you-page-image"
+      />
+
+      <button (click)="onClick()"
+              id="goHomeButton"
+              class="thank-you-page-go-home-button button"
+      >
+        <span class="thank-you-page-text">
+          <span>New File</span>
+          <br/>
+        </span>
+      </button>
+      <h3 id="textboxWelcome" class="home-text1">
+        Your recent files:
+      </h3>
+      <div class="home-text3">
+        <a [routerLink]="'/home3'">Hello.txt</a>
+      </div>
+      <div class="home-text2"><a [routerLink]="'/home2'">Hello2.txt</a>
+      </div>
+
+    </div>
+  </div>
+</div>
